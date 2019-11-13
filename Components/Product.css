@@ -1,0 +1,20 @@
+img.center {
+  border: 1px solid #021a40;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 290px;
+  width: 50%;
+}
+
+h3 {
+  text-align: center;
+}
+
+div.description-product {
+  text-align: center;
+}
+
+div.Product-tags-view {
+  text-align: -webkit-center;
+}

@@ -1,0 +1,87 @@
+@media only screen and (max-width: 575px) {
+  .page-menu-wrapper .page-menu-main-grid {
+    margin: 0;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-logo {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+  }
+
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-button {
+    display: none;    
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-button-plus {
+    display: flex;
+    justify-content: center;
+    width: 40px;
+  }
+
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-search-input {
+    display: none;
+  }
+
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-search-button {
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100vw - 240px);
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .page-menu-wrapper .page-menu-main-grid {
+    margin: 0;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-logo {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-button {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-button-plus {
+    display: none;
+  }
+  
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-search-input {
+    width: calc(100vw - 350px);
+  }
+
+  .page-menu-wrapper .page-menu-main-grid .page-menu-main-content .page-menu-main-content-wrapper .page-menu-search-button {
+    display: none;
+  }
+
+  .page-menu-wrapper .page-menu-secondary-search-input {
+    display: none;
+  }
+}
