@@ -1,9 +1,9 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Home from '../components/Home';
-import PageHeader from '../components/PageHeader';
-import ContentPage from '../components/ContentPage';
-import PageMenu from '../components/PageMenu';
+import Footer from '../Components/Footer';
+import Home from '../Components/Home';
+import PageHeader from '../Components/PageHeader';
+import ContentPage from '../Components/ContentPage';
+import PageMenu from '../Components/PageMenu';
 import { useRouter } from 'next/router';
 import withTracker from '../utils/withTracker';
 

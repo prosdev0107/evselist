@@ -1,7 +1,7 @@
 import React from 'react'
-import PremiumProduct from '../components/PremiumProduct';
-import PageMenu from '../components/PageMenu';
-import Footer from '../components/Footer';
+import PremiumProduct from '../Components/PremiumProduct';
+import PageMenu from '../Components/PageMenu';
+import Footer from '../Components/Footer';
 import { useRouter } from 'next/router';
 import withTracker from '../utils/withTracker';
 

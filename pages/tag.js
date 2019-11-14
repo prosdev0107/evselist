@@ -1,7 +1,7 @@
 import React from 'react';
-import Tag from '../components/Tag';
-import Footer from '../components/Footer';
-import PageMenu from '../components/PageMenu';
+import Tag from '../Components/Tag';
+import Footer from '../Components/Footer';
+import PageMenu from '../Components/PageMenu';
 import { useRouter } from 'next/router';
 import withTracker from '../utils/withTracker';
 

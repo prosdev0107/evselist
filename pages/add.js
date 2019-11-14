@@ -1,7 +1,7 @@
 import React from 'react'
-import AddProductPage from '../components/AddProductPage';
-import PageMenu from '../components/PageMenu';
-import Footer from '../components/Footer';
+import AddProductPage from '../Components/AddProductPage';
+import PageMenu from '../Components/PageMenu';
+import Footer from '../Components/Footer';
 import withTracker from '../utils/withTracker';
 
 function add() {
