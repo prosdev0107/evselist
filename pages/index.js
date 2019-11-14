@@ -18,7 +18,7 @@ function Index() {
           {router.query.slug === undefined && <Home />}
           {router.query.slug !== undefined && <ContentPage slug={router.query.slug} />}
         </main>
-        <Footer />}
+        <Footer />
       </div>
     </>
   );
