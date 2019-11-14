@@ -1,7 +1,7 @@
 import React from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
-import { graphCmsImageUrl, isPremium } from "../lib";
+import { graphCmsImageUrl, isPremium } from "../utils/lib";
 import {
   Image,
   Container,
@@ -130,9 +130,9 @@ export const premiumSingleProduct = gql`
 `;
 
 export default graphql(premiumSingleProduct, {
-  options: ({ match }) => ({
+  options: ({ slug }) => ({
     variables: {
-      slug: match.params.slug
+      slug
     }
   })
 })(PremiumView);

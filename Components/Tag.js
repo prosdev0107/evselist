@@ -1,11 +1,11 @@
 import React from "react";
 import gql from "graphql-tag";
-import {Container} from "semantic-ui-react";
-import {graphql} from "react-apollo";
+import { Container } from "semantic-ui-react";
+import { graphql } from "react-apollo";
 import "./Tag.css";
 import ProductGrid from "./ProductGrid";
 
-const Tag = ({data: {loading, error, tag}}) => {
+const Tag = ({ data: { loading, error, tag } }) => {
   if (error) return <h1>Error</h1>;
   return (
     <Container>
@@ -44,9 +44,9 @@ export const singleTag = gql`
 `;
 
 export default graphql(singleTag, {
-  options: ({match}) => ({
+  options: ({ slug }) => ({
     variables: {
-      slug: match.params.slug
+      slug
     }
   })
 })(Tag);

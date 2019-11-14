@@ -4,7 +4,7 @@ import withApollo from 'next-with-apollo';
 import { createHttpLink } from 'apollo-link-http';
 import fetch from 'isomorphic-unfetch';
 
-const GRAPHQL_URL = 'https://api.graphql.jobs/';
+const GRAPHQL_URL = 'http://localhost:8080/graphql/explorer';
 
 const link = createHttpLink({
   fetch,

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
+import { withRouter } from 'next/router'
 
 export default function withTracker(WrappedComponent, options = {}) {
   const trackPage = (page) => {
@@ -12,13 +13,13 @@ export default function withTracker(WrappedComponent, options = {}) {
 
   const HOC = class extends Component {
     componentDidMount() {
-      const page = this.props.location.pathname;
+      const page = this.props.router.pathname;
       trackPage(page);
     }
 
     componentDidUpdate(nextProps) {
-      const currentPage = this.props.location.pathname;
-      const nextPage = nextProps.location.pathname;
+      const currentPage = this.props.router.pathname;
+      const nextPage = nextProps.router.pathname;
 
       if (currentPage !== nextPage) {
         trackPage(nextPage);
@@ -30,5 +31,5 @@ export default function withTracker(WrappedComponent, options = {}) {
     }
   };
 
-  return HOC;
+  return withRouter(HOC);
 }

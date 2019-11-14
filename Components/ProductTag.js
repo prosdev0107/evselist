@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Label, Popup, Grid, Button } from "semantic-ui-react";
 import "./ProductTag.css";
 import { isBrowser, isMobile } from "react-device-detect";
@@ -29,17 +29,18 @@ class ProductTag extends React.Component {
       <>
         {isBrowser && (
           <Link
-            className="tag"
             key={this.props.slug}
-            to={`/tag/${this.props.slug}`}
+            href={`/tag/${this.props.slug}`}
           >
-            <Popup
-              trigger={
-                <Label className="ui small label">{this.props.name}</Label>
-              }
-              content={this.props.description}
-              on="hover"
-            />
+            <a className="tag">
+              <Popup
+                trigger={
+                  <Label className="ui small label">{this.props.name}</Label>
+                }
+                content={this.props.description}
+                on="hover"
+              />
+            </a>
           </Link>
         )}
         {isMobile && (
@@ -62,7 +63,7 @@ class ProductTag extends React.Component {
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column floated="right" width={5}>
-                  <Link key={this.props.slug} to={`/tag/${this.props.slug}`}>
+                  <Link key={this.props.slug} href={`/tag/${this.props.slug}`}>
                     <Button
                       secondary
                       icon="arrow alternate right"

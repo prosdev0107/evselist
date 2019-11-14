@@ -9,7 +9,7 @@ import {
   Form
 } from "semantic-ui-react";
 import "./AddProductPage.css";
-import {graphCmsImageUrl} from "../lib";
+import {graphCmsImageUrl} from "../utils/lib";
 import {formHandler} from "../utils/apiHelper";
 
 const AddProductPage = () => {

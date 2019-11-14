@@ -1,17 +1,27 @@
 import React from 'react';
-import Footer from '../Components/Footer';
+import Footer from '../components/Footer';
+import Home from '../components/Home';
+import PageHeader from '../components/PageHeader';
+import ContentPage from '../components/ContentPage';
+import PageMenu from '../components/PageMenu';
+import { useRouter } from 'next/router';
+import withTracker from '../utils/withTracker';
 
-class Index extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <>
-        <Footer />
-      </>
-    );
-  }
+function Index() {
+  const router = useRouter();
+  return (
+    <>
+      <div>
+        {router.query.slug === undefined && <PageHeader />}
+        <PageMenu />
+        <main>
+          {router.query.slug === undefined && <Home />}
+          {router.query.slug !== undefined && <ContentPage slug={router.query.slug} />}
+        </main>
+        <Footer />}
+      </div>
+    </>
+  );
 }
 
-export default Index;
+export default withTracker(Index);

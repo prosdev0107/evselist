@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import gql from "graphql-tag";
 import {Search, Grid, Label} from "semantic-ui-react";
 import debounce from "lodash.debounce";
-import {withRouter} from "react-router";
+import {withRouter} from "next/router";
 import {withApollo} from "react-apollo";
 
 const initialState = {isLoading: false, tags: [], filter: ""};

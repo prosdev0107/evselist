@@ -1,8 +1,9 @@
 import React from "react";
-import {Menu, Image, Visibility, Button, Grid} from "semantic-ui-react";
-import {Link} from "react-router-dom";
+import { Menu, Image, Visibility, Button, Grid } from "semantic-ui-react";
+import Link from "next/link";
 import Search from "./SearchBar";
 import "./PageMenu.css";
+import Logo from '../assets/images/logo.png';
 
 const menuStyle = {
   border: "none",
@@ -25,8 +26,8 @@ class PageHeader extends React.Component {
     showSecondSearchInput: false
   };
 
-  stickTopMenu = () => this.setState({menuFixed: true});
-  unStickTopMenu = () => this.setState({menuFixed: false});
+  stickTopMenu = () => this.setState({ menuFixed: true });
+  unStickTopMenu = () => this.setState({ menuFixed: false });
 
   onToggleSearchInput = () => {
     this.setState(prevState => ({
@@ -35,7 +36,7 @@ class PageHeader extends React.Component {
   };
 
   render() {
-    const {menuFixed, showSecondSearchInput} = this.state;
+    const { menuFixed, showSecondSearchInput } = this.state;
     return (
       <Visibility
         onBottomPassed={this.stickTopMenu}
@@ -53,16 +54,18 @@ class PageHeader extends React.Component {
           <Grid className="page-menu-main-grid">
             <Grid.Row className="page-menu-main-content">
               <div className="page-menu-main-content-wrapper">
-                <Link as="div" to="/" className="page-menu-logo">
-                  <Image
-                    alt="evselist.com"
-                    src="/logo.png"
-                    style={{
-                      border: 0,
-                      maxHeight: "2.5em",
-                      marginRight: "1.5em"
-                    }}
-                  />
+                <Link href="/">
+                  <a className="page-menu-logo">
+                    <Image
+                      alt="evselist.com"
+                      src={Logo}
+                      style={{
+                        border: 0,
+                        maxHeight: "2.5em",
+                        marginRight: "1.5em"
+                      }}
+                    />
+                  </a>
                 </Link>
                 <div className="page-menu-search-input">
                   <Search />
@@ -75,12 +78,16 @@ class PageHeader extends React.Component {
                   />
                 </div>
                 <div className="page-menu-button">
-                  <Button as={Link} to="/add">
-                    Add Product...
-                  </Button>
+                  <Link href="/add">
+                    <Button as="a">
+                      Add Product...
+                    </Button>
+                  </Link>
                 </div>
                 <div className="page-menu-button-plus">
-                  <Button as={Link} to="/add" icon="plus" />
+                  <Link href="/add">
+                    <Button icon="plus" />
+                  </Link>
                 </div>
               </div>
             </Grid.Row>
@@ -93,7 +100,7 @@ class PageHeader extends React.Component {
         </Menu>
         <div
           id="menuPlaceholder"
-          style={menuFixed ? {height: "48px"} : {height: 0}}
+          style={menuFixed ? { height: "48px" } : { height: 0 }}
         />
       </Visibility>
     );

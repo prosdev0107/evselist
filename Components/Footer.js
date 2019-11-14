@@ -1,6 +1,4 @@
 import React from "react";
-import 'semantic-ui-css/semantic.min.css'
-import "./Footer.css";
 import {
   Container,
   Grid,
@@ -11,9 +9,11 @@ import {
   Icon,
   Button
 } from "semantic-ui-react";
-// import {Link} from "react-router-dom";
+import "./Footer.css";
+import Link from "next/link";
 import Newsletter from "./Newsletter";
-import {Cookies} from "react-cookie-consent";
+import { Cookies } from "react-cookie-consent";
+import LogoWiedergruen from '../assets/images/logo-wiedergruen-min.svg';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class Footer extends React.Component {
     if (Cookies.get("Subscription") !== undefined) {
       Cookies.remove("Subscription");
     }
-    const {count} = this.state;
+    const { count } = this.state;
     this.setState({
       showNewsletter: true,
       count: count + 1
@@ -59,55 +59,71 @@ class Footer extends React.Component {
   }
 
   render() {
-    const {showNewsletter, count} = this.state;
+    const { showNewsletter, count } = this.state;
     return (
       <>
         <Newsletter visible={showNewsletter} count={count} />
         <Responsive>
-          <Segment inverted vertical style={{padding: "5em 0em"}}>
+          <Segment inverted vertical style={{ padding: "5em 0em" }}>
             <Container>
               <Grid divided inverted stackable>
-                <Grid.Row style={{justifyContent: "center"}}>
+                <Grid.Row style={{ justifyContent: "center" }}>
                   <Grid.Column width={3}>
-                  <a href="https://twitter.com/evselist">
-                    <Icon
-                      name="twitter"
-                      size="big"
-                      style={{marginRight: "15px", color: "white"}}
-                    />
-                  </a>
-                  <a href="https://www.linkedin.com/company/wiedergruen/">
-                    <Icon
-                      name="linkedin"
-                      size="big"
-                      style={{marginRight: "15px", color: "white"}}
-                    />
-                  </a>
-                </Grid.Column>
-                    <Grid.Column width={4}>
-                  <Button icon onClick={this.handleSubscription}>
-                    <Icon name='envelope' />
-                    Subscribe to updates
+                    <a href="https://twitter.com/evselist">
+                      <Icon
+                        name="twitter"
+                        size="big"
+                        style={{ marginRight: "15px", color: "white" }}
+                      />
+                    </a>
+                    <a href="https://www.linkedin.com/company/wiedergruen/">
+                      <Icon
+                        name="linkedin"
+                        size="big"
+                        style={{ marginRight: "15px", color: "white" }}
+                      />
+                    </a>
+                  </Grid.Column>
+                  <Grid.Column width={4}>
+                    <Button icon onClick={this.handleSubscription}>
+                      <Icon name='envelope' />
+                      Subscribe to updates
                   </Button>
-                </Grid.Column>
+                  </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
                   <Grid.Column width={4}>
                     <Header inverted as="h4" content="Page Links" />
-                    {/* <List link inverted>
-                      <List.Item as={Link} to="/#list">
-                        All EV charging products
+                    <List link inverted>
+                      <List.Item>
+                        <Link href="/#list">
+                          <a>
+                            All EV charging products
+                          </a>
+                        </Link>
                       </List.Item>
-                      <List.Item as={Link} to="/tag/dc">
-                        DC charging stations
+                      <List.Item >
+                        <Link href="/tag/dc">
+                          <a>
+                            DC charging stations
+                          </a>
+                        </Link>
                       </List.Item>
-                      <List.Item as={Link} to="/tag/ac">
-                        AC charging stations
+                      <List.Item>
+                        <Link href="/tag/ac">
+                          <a>
+                            AC charging stations
+                          </a>
+                        </Link>
                       </List.Item>
-                      <List.Item as={Link} to="/tag/saas">
-                        Backend services
+                      <List.Item>
+                        <Link href="/tag/saas">
+                          <a>
+                            Backend services
+                          </a>
+                        </Link>
                       </List.Item>
-                    </List> */}
+                    </List>
                   </Grid.Column>
                   <Grid.Column width={8}>
                     <Header inverted as="h4" content="About evselist.com" />
@@ -127,18 +143,30 @@ class Footer extends React.Component {
                     </List>
                   </Grid.Column>
                   <Grid.Column width={4}>
-                    {/* <List link inverted>
+                    <List link inverted>
                       <Header as="h4" inverted content="Legal" />
-                      <List.Item as={Link} to="/privacy">
-                        Privacy policy
+                      <List.Item>
+                        <Link href="/privacy">
+                          <a>
+                            Privacy policy
+                          </a>
+                        </Link>
                       </List.Item>
-                      <List.Item as={Link} to="/terms">
-                        Terms of service
+                      <List.Item>
+                        <Link href="/terms">
+                          <a>
+                            Terms of service
+                          </a>
+                        </Link>
                       </List.Item>
-                      <List.Item as={Link} to="/imprint">
-                        Imprint
+                      <List.Item>
+                        <Link href="/imprint">
+                          <a>
+                            Imprint
+                          </a>
+                        </Link>
                       </List.Item>
-                    </List> */}
+                    </List>
                   </Grid.Column>
                   {/* <Grid.Column width={3}>
                   <Newsletter />
@@ -151,7 +179,7 @@ class Footer extends React.Component {
                       href="https://wiedergruen.com"
                       className="logo-wiedergruen"
                     >
-                      <img src="/logo-wiedergruen-min.svg" alt="Wiedergrün" />
+                      <img src={LogoWiedergruen} alt="Wiedergrün" />
                     </a>
                   </Grid.Column>
                 </Grid.Row>

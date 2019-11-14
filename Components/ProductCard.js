@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
-import { Link } from "react-router-dom";
-import { graphCmsImageUrl } from "../lib";
+import Link from "next/link";
+import { graphCmsImageUrl } from "../utils/lib";
 import "./ProductCard.css";
 import CompanyLogo from "./CompanyLogo";
 import ProductTag from "./ProductTag";
@@ -37,7 +37,7 @@ class ProductCard extends React.Component {
         {productImage}
         <Card.Content>
           <Card.Header className="product-name">
-            <Link to={`/product/${product.slug}`}>{product.name}</Link>
+            <Link href={`/product/${product.slug}`}><a>{product.name}</a></Link>
           </Card.Header>
           <div className="Product-tags">
             {product.tags.map(tag => (

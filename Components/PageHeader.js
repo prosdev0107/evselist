@@ -9,9 +9,10 @@ import {
   Icon,
   Ref
 } from "semantic-ui-react";
-import {Link} from "react-router-dom";
-import {graphCmsImageUrl} from "../lib";
-import {animateScroll as scroll} from "react-scroll";
+import { Link } from "next/router";
+import { graphCmsImageUrl } from "../utils/lib";
+import { animateScroll as scroll } from "react-scroll";
+import Logo from '../assets/images/logo.png';
 
 class PageHeader extends React.Component {
   constructor(props) {
@@ -54,8 +55,8 @@ class PageHeader extends React.Component {
             <Container text>
               <Image
                 alt="evselist.com"
-                src="/logo.png"
-                style={{border: 0, maxWidth: "50vw"}}
+                src={Logo}
+                style={{ border: 0, maxWidth: "50vw" }}
               />
               <Header
                 as="h2"
@@ -76,7 +77,7 @@ class PageHeader extends React.Component {
           </Segment>
         </Ref>
         <Ref innerRef={this.secondSegment}>
-          <Segment style={{padding: "8em 0em"}} vertical>
+          <Segment style={{ padding: "8em 0em" }} vertical>
             <Container text>
               <Grid columns={2} relaxed="very" stackable>
                 <Grid.Column>
@@ -88,7 +89,7 @@ class PageHeader extends React.Component {
                   />
                 </Grid.Column>
                 <Grid.Column verticalAlign="middle">
-                  <p style={{fontSize: "1.4em"}}>
+                  <p style={{ fontSize: "1.4em" }}>
                     Great solutions need great components. Finding the right
                     components requires time and resources. We take care of that
                     for you!
@@ -99,12 +100,12 @@ class PageHeader extends React.Component {
           </Segment>
         </Ref>
         <Ref innerRef={this.thirdSegment}>
-          <Segment vertical style={{marginBottom: "4em"}}>
+          <Segment vertical style={{ marginBottom: "4em" }}>
             <Container text>
-              <Grid columns={2} relaxed="very" stackable streched>
+              <Grid columns={2} relaxed="very" stackable stretched>
                 <Grid.Row verticalAlign="bottom">
                   <Grid.Column>
-                    <Header as="h3" style={{fontSize: "1.1em"}}>
+                    <Header as="h3" style={{ fontSize: "1.1em" }}>
                       Access the market for electric vehicle charging with the
                       latest products and services through our database.
                     </Header>
@@ -120,7 +121,7 @@ class PageHeader extends React.Component {
                     </Button>
                   </Grid.Column>
                   <Grid.Column verticalAlign="middle">
-                    <Header as="h3" style={{fontSize: "1.1em"}}>
+                    <Header as="h3" style={{ fontSize: "1.1em" }}>
                       As a product provider give your items more visibility for
                       worldwide customers through standard or premium listing.
                     </Header>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphCmsImageUrl } from '../lib'
+import { graphCmsImageUrl } from '../utils/lib'
 
 class CompanyLogo extends React.Component{
   render() {

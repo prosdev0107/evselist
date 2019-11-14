@@ -3,7 +3,7 @@ import "./CookieConsent.css";
 import { Button, Modal } from "semantic-ui-react";
 import { Cookies } from "react-cookie-consent";
 import ReactGA from "react-ga";
-import { TRACKING_CODE } from "../../configs";
+import { TRACKING_CODE } from "../../config/configs";
 
 export default class CookieConsent extends Component {
   constructor(props) {
